@@ -15,11 +15,3 @@ spec:
             name: dev-nginx-service
             port:
               number: 80
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx-deployment
-spec:
-  replicas: 1
-
