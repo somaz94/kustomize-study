@@ -7,5 +7,9 @@ patches:
     target:
       kind: Deployment
       name: nginx-deployment
+  - path: ingress.yaml 
+    target:
+      kind: Ingress
+      name: nginx-ingress
 namePrefix: qa-
 namespace: qa-nginx

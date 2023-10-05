@@ -35,11 +35,9 @@ kustomize build overlays/prod
 
 ### Saving kustomize manifests:
 ```bash
-kustomize build overlays/dev > manifests/dev-nginx-deployment.yaml
-
-kustomize build overlays/qa > manifests/qa-nginx-deployment.yaml
-
-kustomize build overlays/prod > manifests/prod-nginx-deployment.yaml
+kustomize build overlays/dev > manifests/dev-nginx.yaml
+kustomize build overlays/qa > manifests/qa-nginx.yaml
+kustomize build overlays/prod > manifests/prod-nginx.yaml
 ```
 
 <br/>
@@ -67,21 +65,30 @@ kubectl apply -k overlays/prod/
 
 Once you have deployed your resources, you can verify them in the specific namespace:
 ```bash
-kubectl get po,svc -n dev-nginx
+kubectl get po,svc,ingress -n dev-nginx
 ```
 
 You should see an output similar to:
 ```bash
 NAME                                       READY   STATUS    RESTARTS   AGE
-pod/dev-nginx-deployment-8d545c96d-rq9nh   1/1     Running   0          56s
+pod/dev-nginx-deployment-8d545c96d-48rqx   1/1     Running   0          2m37s
 
-NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-service/dev-nginx-service   ClusterIP   10.233.26.103   <none>        80/TCP    56s
+NAME                        TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+service/dev-nginx-service   ClusterIP   10.233.6.66   <none>        80/TCP    2m37s
+
+NAME                                          CLASS    HOSTS                        ADDRESS        PORTS   AGE
+ingress.networking.k8s.io/dev-nginx-ingress   <none>   dev-nginx.fgn.nerdystar.io   10.10.100.22   80      2m37s
+
+
 ```
 
 To test if your deployment is serving the expected content, you can send a request using curl:
 ```bash
-curl 10.233.26.103
+curl 10.233.6.66
+
+or
+
+curl dev-nginx.somaz.link
 ```
 
 The expected response would be the default nginx welcome page:

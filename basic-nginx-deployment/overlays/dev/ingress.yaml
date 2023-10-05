@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: dev-nginx
+spec:
+  rules:
+  - host: dev-nginx.somaz.link
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dev-nginx-service
+            port:
+              number: 80
