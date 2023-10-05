@@ -7,9 +7,6 @@ This repository is dedicated to learning and practicing the application of Kusto
 ## 📁 Repository Contents
 
 - 🌐 `basic-nginx-deployment`: Contains an example setup for deploying an nginx application with variations for different environments.
-  - 🛠️ `base`: Base configurations that are common across all environments.
-  - 🎨 `overlays`: Environment-specific modifications and settings. Currently, it includes configurations for `dev`, `qa`, and `prod`.
-  - 📜 `manifests`: Pre-built Kubernetes manifests based on the Kustomize configurations.
 
 <br/>
 
