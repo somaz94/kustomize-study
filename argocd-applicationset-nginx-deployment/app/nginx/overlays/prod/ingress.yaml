@@ -2,7 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
-  namespace: prod-nginx
 spec:
   rules:
   - host: prod-nginx.fgn.nerdystar.io
