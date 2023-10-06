@@ -35,6 +35,7 @@ flux create source git nginx-source \
 kubectl apply -f git-source.yaml -n flux-system
 
 # Setup Kustomizations for different environments:
+
 # Development
 flux create kustomization nginx-dev-kustomization \
   --source=nginx-source \
@@ -59,10 +60,13 @@ flux create kustomization nginx-qa-kustomization \
   --interval=1m \
   --namespace=flux-system
 
+
 # Check the created resources:
 k get kustomizations.kustomize.toolkit.fluxcd.io -n flux-system
 
+
 # Cleanup:
+
 # Delete Kustomizations
 k delete kustomizations.kustomize.toolkit.fluxcd.io -n flux-system nginx-dev-kustomization
 
@@ -71,6 +75,7 @@ k delete gitrepositories.source.toolkit.fluxcd.io -n flux-system nginx-source
 
 # Delete Secret
 k delete secrets -n flux-system flux-ssh-key
+
 
 # Uninstall Flux:
 flux uninstall --namespace=flux-system
