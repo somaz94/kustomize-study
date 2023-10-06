@@ -9,17 +9,20 @@ spec:
           - list:
               elements:
                 - cluster: master-node.somaz.link
-                  url: https:// # ClusterIP or Domain
+                  url: https:// # ClusterIP or URI or Domain
+                  overlay: dev # This new field specifies the overlay to use
                   values:
                     environment: dev
                     project: nginx
                 - cluster: master-node.somaz.link
-                  url: https://
+                  url: https:// 
+                  overlay: qa
                   values:
                     environment: qa
                     project: nginx
                 - cluster: master-node.somaz.link
                   url: https:// 
+                  overlay: prod
                   values:
                     environment: prod
                     project: nginx
@@ -27,7 +30,7 @@ spec:
               repoURL: git@github.com:somaz94/kustomize-study.git
               revision: HEAD
               directories:
-                - path: argocd-applicationset-nginx-deployment/app/nginx/overlays/* # Path
+                - path: argocd-applicationset-nginx-deployment/app/nginx/overlays/{{overlay}} # Use the new overlay field
   template:
     metadata:
       name: '{{values.environment}}-{{values.project}}'
@@ -39,7 +42,6 @@ spec:
         path: '{{path}}'
         kustomize:
           namePrefix: '{{values.environment}}-'
-          # nameSuffix: '-{{values.project}}'
       destination:
         server: '{{ url }}'
         namespace: '{{values.environment}}-{{values.project}}'

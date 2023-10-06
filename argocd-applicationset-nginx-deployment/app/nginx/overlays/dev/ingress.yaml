@@ -4,7 +4,7 @@ metadata:
   name: nginx-ingress
 spec:
   rules:
-  - host: dev-nginx.fgn.nerdystar.io
+  - host: dev-nginx.somaz.link
     http:
       paths:
       - path: /
