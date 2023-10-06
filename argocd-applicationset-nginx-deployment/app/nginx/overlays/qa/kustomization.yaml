@@ -12,3 +12,4 @@ patches:
       kind: Ingress
       name: nginx-ingress
 namespace: qa-nginx
+namePrefix: qa-

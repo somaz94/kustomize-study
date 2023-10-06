@@ -27,7 +27,7 @@ spec:
               repoURL: git@github.com:somaz94/kustomize-study.git
               revision: HEAD
               directories:
-                - path: argocd-applicationset-nginx-deployment/app/nginx/* # Path
+                - path: argocd-applicationset-nginx-deployment/app/nginx/overlays/* # Path
   template:
     metadata:
       name: '{{values.environment}}-{{values.project}}'

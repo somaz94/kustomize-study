@@ -12,3 +12,4 @@ patches:
       kind: Ingress
       name: nginx-ingress
 namespace: prod-nginx
+namePrefix: prod-

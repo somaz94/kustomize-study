@@ -13,4 +13,5 @@ patches:
       kind: Ingress
       name: nginx-ingress
 namespace: dev-nginx
+namePrefix: dev-
 
