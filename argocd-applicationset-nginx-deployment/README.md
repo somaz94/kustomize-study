@@ -77,7 +77,48 @@ NAME                        TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AG
 service/dev-nginx-service   ClusterIP   10.233.21.0   <none>        80/TCP    88s
 
 NAME                                          CLASS    HOSTS                        ADDRESS        PORTS   AGE
-ingress.networking.k8s.io/dev-nginx-ingress   <none>   dev-nginx.fgn.nerdystar.io   10.10.100.22   80      88s
+ingress.networking.k8s.io/dev-nginx-ingress   <none>   dev-nginx.somaz.link   10.10.100.22   80      88s
+```
+
+<br/>
+
+For qa:
+```bash
+k get po,svc,ingress -n qa-nginx
+```
+
+Expected output:
+```bash
+NAME                                      READY   STATUS    RESTARTS   AGE
+pod/qa-nginx-deployment-8d545c96d-4bd8t   1/1     Running   0          93s
+pod/qa-nginx-deployment-8d545c96d-mxchm   1/1     Running   0          93s
+
+NAME                       TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+service/qa-nginx-service   ClusterIP   10.233.62.87   <none>        80/TCP    94s
+
+NAME                                         CLASS    HOSTS                       ADDRESS        PORTS   AGE
+ingress.networking.k8s.io/qa-nginx-ingress   <none>   qa-nginx.somaz.link   10.10.100.22   80      93s
+```
+
+<br/>
+
+For prod:
+```bash
+k get po,svc,ingress -n prod-nginx
+```
+
+Expected output:
+```bash
+NAME                                        READY   STATUS    RESTARTS   AGE
+pod/prod-nginx-deployment-8d545c96d-45z4t   1/1     Running   0          96s
+pod/prod-nginx-deployment-8d545c96d-jspm5   1/1     Running   0          96s
+pod/prod-nginx-deployment-8d545c96d-qf97w   1/1     Running   0          96s
+
+NAME                         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/prod-nginx-service   ClusterIP   10.233.17.172   <none>        80/TCP    97s
+
+NAME                                           CLASS    HOSTS                         ADDRESS        PORTS   AGE
+ingress.networking.k8s.io/prod-nginx-ingress   <none>   prod-nginx.somaz.link   10.10.100.22   80      96s
 ```
 
 
