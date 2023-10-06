@@ -12,7 +12,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: prod-nginx-service
+            name: nginx-service
             port:
               number: 80
 

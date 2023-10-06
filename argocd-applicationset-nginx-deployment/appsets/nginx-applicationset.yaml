@@ -24,7 +24,7 @@ spec:
                     environment: prod
                     project: nginx
           - git:
-              repoURL: git@github.com:somaz94/kustomize-template.git
+              repoURL: git@github.com:somaz94/kustomize-study.git
               revision: HEAD
               directories:
                 - path: argocd-applicationset-nginx-deployment/app/nginx/* # Path
@@ -34,7 +34,7 @@ spec:
     spec:
       project: '{{values.project}}'
       source:
-        repoURL: git@github.com:somaz94/kustomize-template.git
+        repoURL: git@github.com:somaz94/kustomize-study.git
         targetRevision: HEAD
         path: '{{path}}'
         # kustomize:
