@@ -7,6 +7,7 @@ This repository is dedicated to learning and practicing the application of Kusto
 ## 📁 Repository Contents
 
 - 🌐 `basic-nginx-deployment`: Contains an example setup for deploying an nginx application with variations for different environments.
+- 🌐 `argocd-applicationset-nginx-deployment`: Demonstrates the usage of ArgoCD ApplicationSet in combination with Kustomize.
 
 <br/>
 
