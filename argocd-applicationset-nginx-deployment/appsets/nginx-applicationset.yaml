@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: nginx-appicationset
+spec:
+  generators:
+    - matrix:
+        generators:
+          - list:
+              elements:
+                - cluster: master-node.somaz.link
+                  url: https:// # ClusterIP or Domain
+                  values:
+                    environment: dev
+                    project: nginx
+                - cluster: master-node.somaz.link
+                  url: https://
+                  values:
+                    environment: qa
+                    project: nginx
+                - cluster: master-node.somaz.link
+                  url: https:// 
+                  values:
+                    environment: prod
+                    project: nginx
+          - git:
+              repoURL: git@github.com:somaz94/kustomize-template.git
+              revision: HEAD
+              directories:
+                - path: argocd-applicationset-nginx-deployment/app/nginx/* # Path
+  template:
+    metadata:
+      name: '{{values.environment}}-{{values.project}}'
+    spec:
+      project: '{{values.project}}'
+      source:
+        repoURL: git@github.com:somaz94/kustomize-template.git
+        targetRevision: HEAD
+        path: '{{path}}'
+        # kustomize:
+        #   namePrefix: '{{values.environment}}-'
+        #   nameSuffix: '-{{values.project}}'
+      destination:
+        server: '{{ url }}'
+        namespace: '{{values.environment}}-{{values.project}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - ApplyOutOfSyncOnly=true
