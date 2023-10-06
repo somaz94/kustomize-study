@@ -12,3 +12,6 @@ patches:
       kind: Ingress
       name: nginx-ingress
 namespace: qa-nginx
+images:
+  - name: nginx
+    newTag: "1.24"
