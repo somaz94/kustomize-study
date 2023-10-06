@@ -8,6 +8,7 @@ This repository is dedicated to learning and practicing the application of Kusto
 
 - 🌐 `basic-nginx-deployment`: Contains an example setup for deploying an nginx application with variations for different environments.
 - 🌐 `argocd-applicationset-nginx-deployment`: Demonstrates the usage of ArgoCD ApplicationSet in combination with Kustomize.
+- 🌐 `flux-nginx-deployment`: Demonstrates the setup and deployment of nginx resources using FluxCD.
 
 <br/>
 
