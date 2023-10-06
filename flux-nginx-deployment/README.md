@@ -6,7 +6,7 @@ In this guide, we demonstrate the process of setting up and deploying resources 
 
 ## Installation and Setup:
 
-\```bash
+```bash
 # Create a namespace for Flux:
 k create ns flux-system
 
@@ -74,7 +74,7 @@ k delete secrets -n flux-system flux-ssh-key
 
 # Uninstall Flux:
 flux uninstall --namespace=flux-system
-\```
+```
 
 <br/>
 
