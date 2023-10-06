@@ -1,4 +1,3 @@
-
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
@@ -7,5 +6,4 @@ patchesStrategicMerge:
   - replica-count.yaml
   - ingress.yaml
 namespace: dev-nginx
-namePrefix: dev-
 

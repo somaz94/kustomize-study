@@ -37,9 +37,9 @@ spec:
         repoURL: git@github.com:somaz94/kustomize-study.git
         targetRevision: HEAD
         path: '{{path}}'
-        # kustomize:
-        #   namePrefix: '{{values.environment}}-'
-        #   nameSuffix: '-{{values.project}}'
+        kustomize:
+          namePrefix: '{{values.environment}}-'
+          # nameSuffix: '-{{values.project}}'
       destination:
         server: '{{ url }}'
         namespace: '{{values.environment}}-{{values.project}}'

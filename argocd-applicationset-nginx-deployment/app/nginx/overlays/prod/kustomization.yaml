@@ -6,4 +6,3 @@ patchesStrategicMerge:
   - replica-count.yaml
   - ingress.yaml
 namespace: prod-nginx
-namePrefix: prod-
