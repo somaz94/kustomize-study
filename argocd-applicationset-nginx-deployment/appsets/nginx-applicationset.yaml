@@ -43,7 +43,7 @@ spec:
         kustomize:
           namePrefix: '{{values.environment}}-'
       destination:
-        server: '{{ url }}'
+        server: '{{url}}'
         namespace: '{{values.environment}}-{{values.project}}'
       syncPolicy:
         automated:
