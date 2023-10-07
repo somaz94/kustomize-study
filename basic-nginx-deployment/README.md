@@ -45,9 +45,7 @@ kustomize build overlays/prod > manifests/prod-nginx.yaml
 ### Building and deploying kustomize resources:
 ```bash
 kustomize build overlays/dev | kubectl apply -f - --namespace=dev-nginx
-
 kustomize build overlays/qa | kubectl apply -f - --namespace=qa-nginx
-
 kustomize build overlays/prod | kubectl apply -f - --namespace=prod-nginx
 ```
 
