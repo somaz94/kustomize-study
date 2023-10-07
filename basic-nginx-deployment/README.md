@@ -108,5 +108,3 @@ kubectl delete -k overlays/dev
 ```
 
 <br/>
-
-- Note: Ensure that you have a directory named manifests before attempting to save the kustomize manifests in the suggested paths.
