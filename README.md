@@ -12,9 +12,14 @@ This repository is dedicated to learning and practicing the application of Kusto
 
 <br/>
 
-## 🧐 How to Use
+## 🧐 How to Install
+You can check other installation methods at [this link](https://kubectl.docs.kubernetes.io/installation/kustomize/).
 
-Detailed usage instructions and examples can be found inside the `basic-nginx-deployment` directory.
+```bash
+curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+
+sudo mv kustomize /usr/local/bin/
+```
 
 <br/>
 
