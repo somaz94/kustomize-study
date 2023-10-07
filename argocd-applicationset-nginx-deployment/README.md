@@ -15,7 +15,7 @@ This repository demonstrates the usage of ArgoCD ApplicationSet in combination w
 
 ## Deployment Workflow
 
-1. **Create Secret and Project in ArgoCD**: Establish a connection to the GitHub repository by creating the necessary Secret and Project in ArgoCD.
+1. **Create Github Repo Secret and Project in ArgoCD**: Establish a connection to the GitHub repository by creating the necessary Secret and Project in ArgoCD.
 2. **Write and Upload Templates**: After designing the necessary templates, upload them to the GitHub repository.
 3. **Deploy ApplicationSet in ArgoCD**: Once the templates are in place, deploy the ApplicationSet using ArgoCD.
 
