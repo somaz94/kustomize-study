@@ -20,7 +20,7 @@ Detailed usage instructions and examples can be found inside the `basic-nginx-de
 
 ## 📚 Useful Resources
 
-- 📖 [Kustomize Official Documentation](https://kubectl.docs.kubernetes.io/reviews/kustomize/)
+- 📖 [Kustomize Official Documentation](https://kustomize.io/)
 
 <br/>
 
