@@ -84,5 +84,5 @@ flux uninstall --namespace=flux-system
 <br/>
 
 ## References:
+- [FluxCD official documentation](https://fluxcd.io)
 - [Flux Command Reference](https://fluxcd.io/flux/cmd/)
-- FluxCD official documentation.
