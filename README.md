@@ -30,6 +30,12 @@ The directory structure and content will be continually updated and expanded as 
 
 <br/>
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+<br/>
+
 ---
 
 🤝 Contribution and feedback are welcome! If you encounter any issues or have suggestions, please open an issue.
